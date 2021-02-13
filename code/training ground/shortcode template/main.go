@@ -1,18 +1,12 @@
 package main
 
 import (
-	"fmt"
+	"net/http"
+	"shortcodes/controllers"
 )
 
 func main() {
-	//controller.AddUser()
+	controllers.RegisterControllers()
+	http.ListenAndServe(":3000", nil)
 
-	port := 3000
-	port, err := StartServer(port)
-	fmt.Println("Port", port, "has started successfully", err)
-}
-
-func StartServer(port int) (int, error) {
-	fmt.Println("THe server has started on port", port)
-	return port, nil
 }
