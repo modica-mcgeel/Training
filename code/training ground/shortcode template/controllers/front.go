@@ -6,5 +6,5 @@ func RegisterControllers() {
 	uc := newUserController()
 
 	http.Handle("/sctypes", *uc)
-	//http.Handle("/sctypes/, *uc")
+	http.Handle("/sctypes/", *uc)
 }
