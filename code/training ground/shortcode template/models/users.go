@@ -26,6 +26,7 @@ var (
 func NewSC(sc ShortCodeRequest) (ShortCodeRequest, error) {
 	// This method is used when a new code needs to be setup
 	sc.ID = nextID
+	sc.CompanyAddress = "39 Omapere Street"
 	nextID++
 	scRequest = append(scRequest, &sc)
 	return sc, nil
@@ -48,4 +49,4 @@ func DonationSC() {
 func PricePointChangeSC() {
 	// This method is invoked when a request for a price change to a shortcode
 
-}
+}*/
