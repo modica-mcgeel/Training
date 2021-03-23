@@ -17,7 +17,7 @@ type Product struct {
 	ProductName    string `json:"productName"`
 }
 
-var productList []Product
+var productList []*Product
 
 func init() {
 	productsJSON := `[
@@ -75,6 +75,7 @@ func productsHandler(w http.ResponseWriter, r *http.Request) {
 			w.WriteHeader(http.StatusBadRequest)
 			return
 		}
+		productList = append(productList, &newProduct)
 		newProduct.ProductID = getNextID()
 	}
 }
